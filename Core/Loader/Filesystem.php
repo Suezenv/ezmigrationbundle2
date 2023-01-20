@@ -79,7 +79,7 @@ class Filesystem implements LoaderInterface
             }
         }
 
-        $rootDir = realpath($this->kernel->getProjectDir() . '/..') . '/';
+        $rootDir = $this->kernel->getProjectDir() . '/';
 
         $definitions = array();
         foreach ($paths as $path) {
