@@ -123,7 +123,7 @@ class Filesystem implements LoaderInterface
      */
     protected function normalizePath($path)
     {
-        $rootDir = realpath($this->kernel->getProjectDir() . '/..') . '/';
+        $rootDir = $this->kernel->getProjectDir() . '/';
         // note: we handle the case of 'path = root dir', but path is expected to include a filename...
         return $path === $rootDir ? './' : preg_replace('#^' . preg_quote($rootDir, '#'). '#', '', $path);
     }
